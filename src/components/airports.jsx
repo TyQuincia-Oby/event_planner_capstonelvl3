@@ -24,7 +24,8 @@ export default function Airports(){
     return(
         <>
             <h1>Busiest Airports in The USA</h1>
-            {airportList}
+            <ul>{airportList}</ul>
+            
             <button onClick={getAirports}>Let's Fly!</button>
         </>
     );

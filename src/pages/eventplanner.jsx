@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Airports from '../components/airports';
-//import '/App.css'
+import '../App.css'
 import Navbar from '../components/Navbar';
 import Guests from '../components/guests';
 import Venues from '../components/venues';
@@ -12,15 +12,12 @@ export default function EventPlanner() {
 
   return (
     <>
-      <div className="card">
+      <div className="container">
         <h1>Event Planning SideKick</h1>
         <p>Begin your planning adventure...</p>
         <Navbar />
-        <Guests />
-        <Airports />
-        <Venues />
-        <Desktop />
-        <GuestForm />
+        
+        
        </div>
     </>
   );

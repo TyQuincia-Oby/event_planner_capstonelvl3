@@ -3,12 +3,13 @@ import {useState} from "react";
 import Airports from '../components/airports';
 import Guests from '../components/guests';
 import Venues from '../components/venues';
+import Desktop from "../pages/desktop";
 
 
 export default function Navbar(){
  console.log("Hello from Navbar")
 
- const [selectedContent, setSelectedContent] = useState('guestList')
+ const [selectedContent, setSelectedContent] = useState('desktop')
 
     function goToVenues(){
         console.log ("Going to Venues")
@@ -30,11 +31,23 @@ export default function Navbar(){
     // }
     function goToAddGuest(){
         console.log ("Going to Add Guest")
+        setSelectedContent('addGuest')
     }
     function showGuests(){
         console.log ("Showing Guest List")
+        setSelectedContent('guestList')
     }
+    let pageContent = <Guests />;
 
+    if (selectedContent === 'guestList'){
+        pageContent = <Guests />;
+    } else if (selectedContent === 'desktop'){
+        pageContent = <Desktop />
+    } else if (selectedContent === 'airports'){
+        pageContent = <Airports />
+    } else if (selectedContent === 'venues'){
+        pageContent = <Venues />
+    }
 
 
     return(
@@ -47,7 +60,7 @@ export default function Navbar(){
                 <button onClick={goToAddGuest}>Add Guest</button>
                 <button onClick={showGuests}>Get Guest List</button>
             </nav>
-            {selectedContent}
+            {pageContent}
         </div>
 
     );
