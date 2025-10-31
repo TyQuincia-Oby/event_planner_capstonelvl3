@@ -1,5 +1,5 @@
-import './App.css'
-import EventPlanner from '../src/pages/eventplanner'
+import './App.css';
+import EventPlanner from '../src/pages/eventplanner';
 
 function App() {
   
