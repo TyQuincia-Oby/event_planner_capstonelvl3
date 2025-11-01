@@ -22,7 +22,7 @@ export default function Venues(){
     for(let i = 0; i < venues.length ; i++){
         venueList.push(
             <li key={venues[i].id}>
-                {venues[i].thumbnail} {venues[i].title} {venues[i].address} {venues[i].rating} {venues[i].website}
+                <img src={venues[i].thumbnail} alt={venues[i].title} /> {venues[i].title} {venues[i].address} {venues[i].rating} {venues[i].website}
             </li>
         )
     }
@@ -32,9 +32,8 @@ export default function Venues(){
     return(
         <>
             <h1> Explore Our Venue Library!</h1>
-            <ul>
-                {venueList}
-            </ul>
+  
+                        {venueList}
             <button onClick={handleVenues}>Venue List</button>
         </>
     );

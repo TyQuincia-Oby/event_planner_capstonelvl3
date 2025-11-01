@@ -19,7 +19,6 @@ export default function Navbar(){
     function goToAirports(){
         console.log ("Going to Airports")
         setSelectedContent('airports')
-        
     }
     function goToDesktop(){
         console.log ("Going to Desktop")
