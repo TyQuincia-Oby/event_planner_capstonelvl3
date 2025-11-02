@@ -30,9 +30,9 @@ export default function Guests(){
     return(
         <>
             <h1>Hello from Guest List</h1>
-            <ul>
+            <table className="table">
                 {guestList}
-            </ul>
+            </table>
             <button onClick={handleGuests}>Show Guests</button>
         </>
     );
