@@ -32,8 +32,9 @@ export default function Venues(){
     return(
         <>
             <h1> Explore Our Venue Library!</h1>
-  
-                        {venueList}
+            <div>
+                {venueList}
+            </div>
             <button onClick={handleVenues}>Venue List</button>
         </>
     );

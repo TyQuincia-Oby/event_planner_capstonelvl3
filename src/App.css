@@ -1,7 +1,38 @@
 *{
-    background-color: plum;
+    background-color: #51344D;
+    text-align: center;
 }
 .container{
     margin: 30px;
     color: whitesmoke;
+   background-color: #51344D;
+   padding: 15px;
+    
+}
+button {
+    background-color: #A78682;
+    padding: 3px;
+    margin: 5px;
+
+}
+h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+nav{
+
+}
+.card{
+    margin: 30px;
+    color: whitesmoke;
+    background-color: #51344D;
+    border-width: 10px;
+    box-shadow: 10px #51344D;
+    padding: 20px;
+    width: 900px;
+}
+ul{
+    list-style: none;
+}
+li{
+    list-style: none;
 }

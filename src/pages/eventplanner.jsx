@@ -12,10 +12,11 @@ export default function EventPlanner() {
 
   return (
     <>
-      <div className="container">
+      <div className="card">
         <h1>Event Planning SideKick</h1>
         <p>Begin your planning adventure...</p>
         <Navbar />
+
         
         
        </div>
