@@ -4,6 +4,7 @@ import Airports from '../components/airports';
 import Guests from '../components/guests';
 import Venues from '../components/venues';
 import Desktop from "../pages/desktop";
+import GuestForm from "../pages/guestform";
 
 
 export default function Navbar(){
@@ -46,6 +47,8 @@ export default function Navbar(){
         pageContent = <Airports />
     } else if (selectedContent === 'venues'){
         pageContent = <Venues />
+    } else if (selectedContent === 'addGuest'){
+        pageContent = <GuestForm />
     }
 
 

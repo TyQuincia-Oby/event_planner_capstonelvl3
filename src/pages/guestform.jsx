@@ -1,16 +1,37 @@
-//Provide at least one form to add new records to the user data table
-//Ensure validation for required fields
-//Add a guest to guest list
-import {useState} from "react"
+export default function GuestForm({ addGuest }) {
+  return (
+    <form onSubmit={addGuest} className="guest-form">
+      <h2>Add a New Guest</h2>
 
-export default function GuestForm(){
-    console.log("Hello from Add a guest form")
+      <label>
+        Household Name:
+        <input type="text" name="householdName" required />
+      </label>
 
-    return(
-        <div>
-            <h1>Add New Guest</h1>
-            {/* form */}
-        </div>
-    )
+      <label>
+        First Name:
+        <input type="text" name="firstName" required />
+      </label>
 
+      <label>
+        Address:
+        <input type="text" name="guestAddress" required />
+      </label>
+
+      <label>
+        Household Size:
+        <input type="number" name="householdSize" min="1" required />
+      </label>
+
+      <label>
+        Attending:
+        <select name="attending" required>
+          <option value="true">Yes</option>
+          <option value="false">No</option>
+        </select>
+      </label>
+
+      <button type="submit">Add Guest</button>
+    </form>
+  );
 }

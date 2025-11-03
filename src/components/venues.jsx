@@ -35,7 +35,8 @@ export default function Venues(){
 
     return(
         <div className="venues-page">
-            <h1> Explore Our Venue Library!</h1>
+            <h1>🕊️Explore Our Venue Library!</h1>
+            <p>Discover spaces that inspire connection, celebration, and unforgettable moments — each venue a stage for your story.</p>
             <button onClick={handleVenues}>Venue List</button>
             <div className="venue-grid"> 
                 {venues.map((venue) => (
