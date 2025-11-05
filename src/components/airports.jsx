@@ -1,6 +1,7 @@
 import {useState} from "react";
 //import "./App.css"
 import supabase from "../utils/supabase";
+import Analytics from "../pages/analytics";
 
 
 export default function Airports(){
@@ -12,8 +13,7 @@ export default function Airports(){
         const data = result.data;
         setAirports(data);
     }
-    
-
+  
     // for (let i = 0; i < airports.length; i++){
     //     airportList.push(
     //         <li key={airports[i].id}>
@@ -64,6 +64,7 @@ export default function Airports(){
             {/* <ul>{airportList}</ul> */}
             <button onClick={getAirports}>Let's Fly!</button>
             <Airports />
+            <Analytics />
         </>
     );
 }

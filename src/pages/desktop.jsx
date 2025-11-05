@@ -1,6 +1,33 @@
 import {useState} from "react"
 import supabase from "../utils/supabase";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import { Pie } from 'react-chartjs-2';
 
+
+ChartJS.register(ArcElement, Tooltip, Legend);
+
+function Chart({goingGuests, notGoingGuests}) {
+const data = {
+  labels: ['Attending', 'Not Attending'],
+  datasets: [
+    {
+      label: '# of Guests',
+      data: [70, 30],
+      backgroundColor: [
+        '#4CAF50',
+        '#F44336',
+        
+      ],
+      borderColor: [
+        '#fff',
+        '#fff',
+      ],
+      borderWidth: 1,
+    },
+  ],
+};
+  return <Pie data={data} />;
+}
 
 
 export default function Desktop(){
@@ -27,9 +54,10 @@ export default function Desktop(){
         let goingCount= 0;
         let notGoingCount = 0;
 
-        for(let i = 0; i < data.length ; i++){
-            const guest = data[i];
-            if (guest.attending===true){
+        // for(let i = 0; i < data.length ; i++){
+        //     const guest = data[i];
+       for (let guest of data){
+        if (guest.attending===true){
                 goingCount++;
             } else if (guest.attending===false){
                 notGoingCount++;
@@ -39,19 +67,40 @@ export default function Desktop(){
         setGoingGuests(goingCount);
         setNotGoingGuests(notGoingCount);
     }      
-
+    let TyQuincia = {
+        typeOfEvent : "Birthday",
+        dateOfEvent : "November 6, 2025",
+        venueChosen : " Park73",
+        firstName : "TyQuincia",
+        email: "tyquinciaoby@gmail.com",
+        phone: "(555)123-4567"
+    }
 
     return(
         <div>
-            <h1>Welcome to your Desktop!</h1>
+            <h1>Welcome {TyQuincia.firstName} to your Desktop!</h1>
+            <h2>Keep track of all your event details here...</h2>
             <div className="eventData">
                 <p>Number of days until event:  </p>
                 <div className="row">
                     <div className="col">
-                    <p>Total Guests Invited: {allGuests.length} </p>
-                    <p>Total Guests Will Attend: {goingGuests} </p>
-                    <p>Total Guests Will Not Be Attending: {notGoingGuests} </p>
-                    <p>Venue Chosen: </p>
+                        <h3>Personal Information: </h3>
+                        <p>Your Name: {TyQuincia.firstName}</p>
+                        <p>Email: {TyQuincia.email}</p>
+                        <p>Phone: {TyQuincia.phone}</p>
+                    </div>
+                    <div className="col">
+                        <h3>Event Information:</h3>
+                        <p>Event Type: {TyQuincia.typeOfEvent}</p>
+                        <p>Date of Event: {TyQuincia.dateOfEvent}</p>
+                        <p>Total Guests Invited: {allGuests.length} </p>
+                        <p>Total Guests Will Attend: {goingGuests} </p>
+                        <p>Total Guests Will Not Be Attending: {notGoingGuests} </p>
+                        <p>Venue Chosen: {TyQuincia.venueChosen}</p>
+                    </div>
+                    <div className="col">
+                        <h3>Event Data</h3>
+                        <div className="graph"><Chart goingGuests={goingGuests} notGoingGuests={notGoingGuests} /></div>
                     </div>
                 </div>
                 <button onClick={totalGuests}>Get Stats</button>

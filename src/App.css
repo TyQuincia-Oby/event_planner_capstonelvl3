@@ -191,4 +191,19 @@ th {
 .guest-form button:hover {
   background-color: #45a049;
 }
-
+.analytics{
+  padding: 8px 15px;
+  width: 100%;
+}
+img{
+  width: 750px;
+  margin: 5px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px black;
+}
+.a-img{
+  width: 750px;
+  margin: 20px;
+  border-radius: 5px;
+  box-shadow: 15px 15px 15px black;
+}
