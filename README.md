@@ -28,3 +28,5 @@ Display records from both external and user data tables.
 - Use Supabase JS client library
 - Async/await for API calls
 - Error handling included
+
+

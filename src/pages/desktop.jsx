@@ -36,6 +36,12 @@ export default function Desktop(){
     const [goingGuests, setGoingGuests] = useState(0);
     const [notGoingGuests, setNotGoingGuests] = useState(0);
     
+    // useState variable for current date
+    const [selectedDate, setSelectedDate] = useState(new Date());
+    const handleDateChange = (newDate) =>{
+        setSelectedDate(newDate);
+    }
+
    console.log (allGuests) 
 
     async function totalGuests(){
@@ -76,14 +82,22 @@ export default function Desktop(){
         firstName : "TyQuincia",
         email: "tyquinciaoby@gmail.com",
         phone: "(555)123-4567"
+
+       
     }
+
+    
 
     return(
         <div>
             <h1>Welcome {TyQuincia.firstName} to your Desktop!</h1>
-            <h2>Keep track of all your event details here...</h2>
+            <p>Keep track of all your event details here...</p>
             <div className="eventData">
+                {/* Passing current date in */}
+                <h3>Today is {selectedDate.toLocaleDateString()} </h3>
+                {/* countdown until event day */}
                 <p>Number of days until event:  </p>
+                {/* Break up desktop into 3 sections for easier readability */}
                 <div className="row">
                     <div className="col">
                         <h3>Personal Information: </h3>
