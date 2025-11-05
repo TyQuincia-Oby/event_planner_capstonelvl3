@@ -1,4 +1,4 @@
-import {useState} from "react"
+import {useEffect, useState} from "react"
 import supabase from "../utils/supabase";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
@@ -12,7 +12,7 @@ const data = {
   datasets: [
     {
       label: '# of Guests',
-      data: [70, 30],
+      data: [goingGuests, notGoingGuests],
       backgroundColor: [
         '#4CAF50',
         '#F44336',
@@ -67,6 +67,8 @@ export default function Desktop(){
         setGoingGuests(goingCount);
         setNotGoingGuests(notGoingCount);
     }      
+
+    useEffect(()=>{totalGuests();},[]);
     let TyQuincia = {
         typeOfEvent : "Birthday",
         dateOfEvent : "November 6, 2025",
