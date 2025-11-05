@@ -2,6 +2,7 @@ import {useEffect, useState} from "react"
 import supabase from "../utils/supabase";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
+import CountdownTimer from "../components/countdown";
 
 
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -95,8 +96,8 @@ export default function Desktop(){
             <div className="eventData">
                 {/* Passing current date in */}
                 <h3>Today is {selectedDate.toLocaleDateString()} </h3>
-                {/* countdown until event day */}
-                <p>Number of days until event:  </p>
+                
+               
                 {/* Break up desktop into 3 sections for easier readability */}
                 <div className="row">
                     <div className="col">
@@ -114,9 +115,17 @@ export default function Desktop(){
                         <p>Total Guests Will Not Be Attending: {notGoingGuests} </p>
                         <p>Venue Chosen: {TyQuincia.venueChosen}</p>
                     </div>
+                </div>
+                <div className="row">
                     <div className="col">
                         <h3>Event Data</h3>
-                        <div className="graph"><Chart goingGuests={goingGuests} notGoingGuests={notGoingGuests} /></div>
+                        <div className="graph">
+                            <Chart goingGuests={goingGuests} notGoingGuests={notGoingGuests} />
+                        </div>
+                    </div>
+                    {/* user control of countdown timer (form) */}
+                    <div className="col">
+                        <CountdownTimer/>
                     </div>
                 </div>
                 <button onClick={totalGuests}>Get Stats</button>
