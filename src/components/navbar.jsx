@@ -47,9 +47,7 @@ export default function Navbar(){
         pageContent = <Airports />
     } else if (selectedContent === 'venues'){
         pageContent = <Venues />
-    } else if (selectedContent === 'addGuest'){
-        pageContent = <GuestForm />
-    }
+    } 
 
 
     return(
@@ -59,7 +57,7 @@ export default function Navbar(){
                 <button onClick={goToAirports}>Airports</button>
                 <button onClick={goToDesktop}>Desktop</button>
                 {/* <button onClick={goToHome}>Home</button> */}
-                <button onClick={goToAddGuest}>Add Guest</button>
+                {/* <button onClick={goToAddGuest}>Add Guest</button> */}
                 <button onClick={showGuests}>Get Guest List</button>
             </nav>
             {pageContent}

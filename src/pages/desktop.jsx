@@ -67,7 +67,7 @@ export default function Desktop(){
         setGoingGuests(goingCount);
         setNotGoingGuests(notGoingCount);
     }      
-
+    //added to make pie chart work
     useEffect(()=>{totalGuests();},[]);
     let TyQuincia = {
         typeOfEvent : "Birthday",
