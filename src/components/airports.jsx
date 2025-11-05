@@ -12,6 +12,7 @@ export default function Airports(){
         const result = await supabase.from("airports").select().eq("year", 2016);
         const data = result.data;
         setAirports(data);
+       
     }
   
     // for (let i = 0; i < airports.length; i++){
@@ -63,7 +64,7 @@ export default function Airports(){
             <p>Where the world never stops moving — explore the airports so busy, even your coffee needs a boarding pass.</p>
             {/* <ul>{airportList}</ul> */}
             <button onClick={getAirports}>Let's Fly!</button>
-            <Airports />
+           <Airports />
             <Analytics />
         </>
     );
