@@ -1,3 +1,5 @@
+import deleteGuest from "../components/guests"
+
 export default function GuestForm({ addGuest }) {
   return (
     <form onSubmit={addGuest} className="guest-form">
@@ -32,6 +34,8 @@ export default function GuestForm({ addGuest }) {
       </label>
 
       <button type="submit">Add Guest</button>
+      <button onClick={deleteGuest}>Delete Guest</button>
     </form>
+    
   );
 }

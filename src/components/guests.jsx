@@ -45,6 +45,17 @@ export default function Guests() {
     setGuests(data);
 
     event.target.reset(); // clear the form
+
+    //delete a guest
+    async function deleteGuest(){
+      await supabase.from("guests").delete().eq('attending', false);
+       // Refresh guest list
+      const { data } = await supabase
+        .from("guests")
+        .select()
+        .order("household_name");
+      setGuests(data);
+    }
   }
 
   return (
@@ -87,7 +98,7 @@ export default function Guests() {
       </div>
 
       <button onClick={handleGuests}>Show Guests</button>
-      <GuestForm addGuest={addGuest} />
+      <GuestForm addGuest={addGuest} deleteGuest={deleteGuest} />
     </>
   );
 }
