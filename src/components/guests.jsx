@@ -98,7 +98,7 @@ export default function Guests() {
       </div>
 
       <button onClick={handleGuests}>Show Guests</button>
-      <GuestForm addGuest={addGuest} deleteGuest={deleteGuest} />
+      <GuestForm addGuest={addGuest} />
     </>
   );
 }

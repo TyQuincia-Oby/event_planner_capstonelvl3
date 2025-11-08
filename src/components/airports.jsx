@@ -8,6 +8,8 @@ export default function Airports(){
     const [airports, setAirports] = useState([]);
     const airportList = [];
 
+    //add international and US buttons to filter
+
     async function getAirports() {
         const result = await supabase.from("airports").select().eq("year", 2016);
         const data = result.data;
@@ -59,13 +61,20 @@ export default function Airports(){
     
 
     return(
-        <>
-            <h1>🛫Busiest Airports in The USA</h1>
-            <p>Where the world never stops moving — explore the airports so busy, even your coffee needs a boarding pass.</p>
-            {/* <ul>{airportList}</ul> */}
-            <button onClick={getAirports}>Let's Fly!</button>
-           <Airports />
-            <Analytics />
-        </>
+    
+            <div className="airport-page">
+                <div className="airport-info">
+                    <h1>🛫Busiest Airports in The USA</h1>
+                    <p>Where the world never stops moving — explore the airports so busy, even your coffee needs a boarding pass.</p>
+                    {/* <ul>{airportList}</ul> */}
+                    <button onClick={getAirports}>Let's Fly!</button>
+                    <Airports />
+                </div>
+                <div className="analytic-container">
+                    <Analytics />
+                </div>
+                
+            </div>
+       
     );
 }

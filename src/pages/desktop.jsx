@@ -76,6 +76,8 @@ export default function Desktop(){
     }      
     //added to make pie chart work
     useEffect(()=>{totalGuests();},[]);
+    
+    //user pojo
     let TyQuincia = {
         typeOfEvent : "Birthday",
         dateOfEvent : "November 6, 2025",
@@ -114,6 +116,7 @@ export default function Desktop(){
                         <p>Total Guests Will Attend: {goingGuests} </p>
                         <p>Total Guests Will Not Be Attending: {notGoingGuests} </p>
                         <p>Venue Chosen: {TyQuincia.venueChosen}</p>
+                        <button onClick={totalGuests}>Get Stats</button>
                     </div>
                 </div>
                 <div className="row">
@@ -128,7 +131,6 @@ export default function Desktop(){
                         <CountdownTimer/>
                     </div>
                 </div>
-                <button onClick={totalGuests}>Get Stats</button>
             </div>
         </div>
     );
