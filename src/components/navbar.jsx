@@ -1,8 +1,8 @@
 //access the report and form pages (and log in if implemented)
 import {useState} from "react";
-import Airports from '../components/airports';
-import Guests from '../components/guests';
-import Venues from '../components/venues';
+import Airports from './airports';
+import Guests from './guests';
+import Venues from './venues';
 import Desktop from "../pages/desktop";
 import GuestForm from "../pages/guestform";
 

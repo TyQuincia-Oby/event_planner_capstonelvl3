@@ -16,6 +16,20 @@ export default function Airports(){
         setAirports(data);
        
     }
+
+    async function getUSAirports(){
+        const result = await supabase.from("airports").select().eq("country", "United States");
+        const data = result.data;
+        setAirports(data);
+        console.log("US Airports: " + data)
+    }
+
+    async function getIntlAirports(){
+        const result = await supabase.from("airports").select().not("country","eq" ,  "United States");
+        const data = result.data;
+        setAirports(data)
+        console.log("International Airports" + data)
+    }
   
     // for (let i = 0; i < airports.length; i++){
     //     airportList.push(
@@ -67,7 +81,9 @@ export default function Airports(){
                     <h1>🛫Busiest Airports in The USA</h1>
                     <p>Where the world never stops moving — explore the airports so busy, even your coffee needs a boarding pass.</p>
                     {/* <ul>{airportList}</ul> */}
-                    <button onClick={getAirports}>Let's Fly!</button>
+                    <button onClick={getAirports}>All Airports</button>
+                    <button onClick={getUSAirports}>US Airports</button>
+                    <button onClick={getIntlAirports}>International Airports</button>
                     <Airports />
                 </div>
                 <div className="analytic-container">

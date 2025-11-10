@@ -6,13 +6,22 @@ import GuestForm from "../pages/guestform";
 export default function Guests() {
   const [guests, setGuests] = useState([]);
 
-  // Fetch guests from Supabase
+  // Fetch ALL guests from Supabase
   async function handleGuests() {
     const { data } = await supabase
       .from("guests")
       .select()
       .order("household_name");
     setGuests(data);
+  }
+
+  //Fetch GOING guests
+  async function willAttend(){
+    const {data} = await supabase
+    .from("guests")
+    .select()
+    .eq("attending", true)
+    setGuests(data)
   }
 
   // Add a new guest
@@ -98,6 +107,7 @@ export default function Guests() {
       </div>
 
       <button onClick={handleGuests}>Show Guests</button>
+      <button onClick={willAttend}>Show Attending Guests</button>
       <GuestForm addGuest={addGuest} />
     </>
   );
