@@ -7,6 +7,7 @@ import Desktop from "../pages/desktop";
 import GuestForm from "../pages/guestform";
 
 
+
 export default function Navbar(){
  console.log("Hello from Navbar")
 
@@ -25,9 +26,9 @@ export default function Navbar(){
         console.log ("Going to Desktop")
         setSelectedContent('desktop')
     }
-    // function goToHome(){
-    //     console.log ("Going to Home Page")
-    //     //setSelectedContent('')
+    // function goToLogin(){
+    //     console.log ("Going to Login Page")
+    //     //setSelectedContent('login')
     // }
     function goToAddGuest(){
         console.log ("Going to Add Guest")
@@ -56,7 +57,7 @@ export default function Navbar(){
                 <button onClick={goToVenues}>Venues</button>
                 <button onClick={goToAirports}>Airports</button>
                 <button onClick={goToDesktop}>Desktop</button>
-                {/* <button onClick={goToHome}>Home</button> */}
+                {/* <button onClick={goToLogin}>Log In </button> */}
                 {/* <button onClick={goToAddGuest}>Add Guest</button> */}
                 <button onClick={showGuests}>Get Guest List</button>
             </nav>

@@ -34,7 +34,7 @@ export default function GuestForm({ addGuest }) {
       </label>
 
       <button type="submit">Add Guest</button>
-      <button onClick={deleteGuest}>Delete Guest</button>
+      {/* <button onClick={deleteGuest}>Delete Guest</button> */}
     </form>
     
   );

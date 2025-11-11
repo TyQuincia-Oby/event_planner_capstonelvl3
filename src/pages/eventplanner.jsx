@@ -6,6 +6,7 @@ import Guests from '../components/guests';
 import Venues from '../components/venues';
 import Desktop from '../pages/desktop';
 import GuestForm from './guestform';
+import LoginPage from '../components/login';
 
 
 export default function EventPlanner() {

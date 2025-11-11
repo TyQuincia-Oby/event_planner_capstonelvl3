@@ -27,7 +27,7 @@ export default function Airports(){
     async function getIntlAirports(){
         const result = await supabase.from("airports").select().not("country","eq" ,  "United States");
         const data = result.data;
-        setAirports(data)
+        setAirports(data);
         console.log("International Airports" + data)
     }
   
@@ -81,7 +81,7 @@ export default function Airports(){
                     <h1>🛫Busiest Airports in The USA</h1>
                     <p>Where the world never stops moving — explore the airports so busy, even your coffee needs a boarding pass.</p>
                     {/* <ul>{airportList}</ul> */}
-                    <button onClick={getAirports}>All Airports</button>
+                    {getAirports}
                     <button onClick={getUSAirports}>US Airports</button>
                     <button onClick={getIntlAirports}>International Airports</button>
                     <Airports />

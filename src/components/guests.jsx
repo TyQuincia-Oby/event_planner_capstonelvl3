@@ -55,16 +55,16 @@ export default function Guests() {
 
     event.target.reset(); // clear the form
 
-    //delete a guest
-    async function deleteGuest(){
-      await supabase.from("guests").delete().eq('attending', false);
-       // Refresh guest list
-      const { data } = await supabase
-        .from("guests")
-        .select()
-        .order("household_name");
-      setGuests(data);
-    }
+    // //delete a guest
+    // async function deleteGuest(){
+    //   await supabase.from("guests").delete().eq('attending', false);
+    //    // Refresh guest list
+    //   const { data } = await supabase
+    //     .from("guests")
+    //     .select()
+    //     .order("household_name");
+    //   setGuests(data);
+    // }
   }
 
   return (
