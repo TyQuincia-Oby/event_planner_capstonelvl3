@@ -95,7 +95,7 @@ export default function CountdownTimer() {
 
       {!countdownStarted ? (
         <form className="countdown-form" onSubmit={handleSetCountdown}>
-          <label htmlFor="title">
+          <label>
             Event Name
             <input
               type="text"
@@ -106,7 +106,7 @@ export default function CountdownTimer() {
             />
           </label>
 
-          <label htmlFor="date-picker">
+          <label>
             Event Date
             <input
               type="date"
@@ -140,6 +140,7 @@ export default function CountdownTimer() {
       )}
 
       <div className="control-buttons">
+        {/* when countdown starts, stop and reset buttons will pop up */}
         {countdownStarted && (
           <>
             <button onClick={handleStopCountdown}>Stop</button>

@@ -12,7 +12,7 @@ export default function LoginPage ({loginComplete}){
         console.log('log in handled');
         console.log(data); //print whats typed
         console.log(error);
-        return data.user //returns current user
+        return data?.user || null; //returns current user & wont crash if login fails
     }
 
     async function handleLogin(event){
@@ -77,12 +77,12 @@ export default function LoginPage ({loginComplete}){
                         <input type="text" name="username" required/>
                     </label> */}
                     <br />
-                    <label htmlFor="email">
+                    <label >
                         Email: 
                         <input type="email" name="email" required/>
                     </label>
                     <br />                      
-                    <label htmlFor="password">
+                    <label>
                         Password: <input type="password" name="password" required />
                     </label>
                     <br />

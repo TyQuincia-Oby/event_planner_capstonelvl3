@@ -2,37 +2,43 @@ import './App.css';
 import EventPlanner from '../src/pages/eventplanner';
 import LoginPage from './components/login';
 import supabase from './utils/supabase';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
+function App() {
+  // user is null when not logged in
+  const [user, setUser] = useState(null);
 
-function App({handleLogin}) {
-  //you dont want a user to be logged in upon loading page
-  const [user, setUser] = useState(null)
-  
-  //when the user clicks button to login setIsLoggedIn will be true
-  function handleLogin(){
-        console.log("hello from log in");
-        setIsLoggedIn(true);
+  // called when user successfully logs in
+  function loginComplete(userData) {
+    console.log("User logged in:", userData);
+    setUser(userData);
 
+     // save session so user stays logged in
+    localStorage.setItem("user", JSON.stringify(userData));
 
-  function loginComplete(user){
-    console.log(user);
-    setUser(user);
-  }
+      // check for existing session on load
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
     }
+  }, []);
+
+  }
+
+
+
   return (
     <>
-        {user ? (
-          // show login page if not logged in
-        <LoginPage handleLogin ={handleLogin} />
-       
-        ) : (
-          // show event planner if logged in
-        <EventPlanner />
-        
-        )}
+      {user ? (
+        // show event planner when logged in
+        <EventPlanner user={user}  />
+      ) : (
+        // show login page when not logged in
+        <LoginPage loginComplete={loginComplete} />
+      )}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
