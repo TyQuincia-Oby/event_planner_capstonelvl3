@@ -80,8 +80,8 @@ export default function Airports(){
                 <div className="airport-info">
                     <h1>🛫Busiest Airports in The USA</h1>
                     <p>Where the world never stops moving — explore the airports so busy, even your coffee needs a boarding pass.</p>
-                    {/* <ul>{airportList}</ul> */}
-                    {getAirports}
+                    <ul>{airportList}</ul>
+                    <button onClick={getAirports}>All Airports</button>
                     <button onClick={getUSAirports}>US Airports</button>
                     <button onClick={getIntlAirports}>International Airports</button>
                     <Airports />

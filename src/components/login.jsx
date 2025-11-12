@@ -1,6 +1,28 @@
 //Authenticate the user and save their details in local storage
 import Desktop from "../pages/desktop"
-export default function LoginPage ({handleLogin}){
+import supabase from "../utils/supabase"
+export default function LoginPage ({loginComplete}){
+
+    async function signIn(email, password){
+        //sign in user with email and password
+        const { data, error } = await supabase.auth.signInWithPassword({
+            email: email,
+            password: password
+        })
+        console.log('log in handled');
+        console.log(data); //print whats typed
+        console.log(error);
+        return data.user //returns current user
+    }
+
+    async function handleLogin(event){
+        event.preventDefault();//keeps page from reloading
+        const email = event.target.elements.email.value;//stores user email
+        const password = event.target.elements.password.value;//stores user password
+        const user = await signIn(email,password);
+        loginComplete(user);
+    }
+
     
     return(
         <div className="login">
@@ -36,7 +58,7 @@ export default function LoginPage ({handleLogin}){
             </div>
 
             {/* report pages */}
-            <div className="info">
+            {/* <div className="info">
                 <div className="row">
                     <div className="col">
                         <button>Venues</button>
@@ -44,27 +66,27 @@ export default function LoginPage ({handleLogin}){
                     </div>
                     <div className="col"></div>
                 </div>
-            </div>
+            </div> */}
 
             {/* login */}
             <div className="guest-form">
                 <h3>Sign In Here...</h3>
-                <form >    
-                    <label htmlFor="username">
+                <form onSubmit={handleLogin}>    
+                    {/* <label htmlFor="username">
                         Username: 
-                        <input type="text" name="username" />
-                    </label>
+                        <input type="text" name="username" required/>
+                    </label> */}
                     <br />
                     <label htmlFor="email">
                         Email: 
-                        <input type="email" name="email" />
+                        <input type="email" name="email" required/>
                     </label>
                     <br />                      
                     <label htmlFor="password">
-                        Password: <input type="password" name="password" />
+                        Password: <input type="password" name="password" required />
                     </label>
                     <br />
-                    <button onClick={handleLogin}>
+                    <button type="submit">
                         Get Planning...
                     </button>                    
                 </form>
