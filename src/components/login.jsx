@@ -27,6 +27,8 @@ export default function LoginPage ({loginComplete}){
     return(
         <div className="login">
             <h1>Event Planning SideKick</h1>
+                <div className="row">
+                    <div className="col-8">
                 <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
                 <h2>App Features</h2>
                 <div className="carousel-inner">
@@ -56,7 +58,7 @@ export default function LoginPage ({loginComplete}){
                 <span className="visually-hidden">Next</span>
             </button>
             </div>
-
+            </div>
             {/* report pages */}
             {/* <div className="info">
                 <div className="row">
@@ -67,9 +69,9 @@ export default function LoginPage ({loginComplete}){
                     <div className="col"></div>
                 </div>
             </div> */}
-
+            <div className="col-4">
             {/* login */}
-            <div className="guest-form">
+            <div className="credentials">
                 <h3>Sign In Here...</h3>
                 <form onSubmit={handleLogin}>    
                     {/* <label htmlFor="username">
@@ -83,7 +85,7 @@ export default function LoginPage ({loginComplete}){
                     </label>
                     <br />                      
                     <label>
-                        Password: <input type="password" name="password" required />
+                        Password: <input type="password" name="password" form="control"required />
                     </label>
                     <br />
                     <button type="submit">
@@ -91,13 +93,14 @@ export default function LoginPage ({loginComplete}){
                     </button>                    
                 </form>
             </div>
-
+            </div>
             {/* <div className="no-credentials">
                 <div className="row">
                     <div className="col">Guest Login</div>
                     <div className="col">New User</div>
                 </div>
             </div> */}
+            </div>
         </div>
     )
 }

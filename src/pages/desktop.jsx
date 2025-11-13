@@ -3,6 +3,7 @@ import supabase from "../utils/supabase";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
 import CountdownTimer from "../components/countdown";
+import LoginPage from "../components/login"
 
 
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -15,8 +16,8 @@ const data = {
       label: '# of Guests',
       data: [goingGuests, notGoingGuests],
       backgroundColor: [
-        '#4CAF50',
-        '#F44336',
+        '#7D8C8A',
+        '#5A4659',
         
       ],
       borderColor: [
@@ -78,7 +79,7 @@ export default function Desktop(){
     useEffect(()=>{totalGuests();},[]);
     
     //user pojo
-    let TyQuincia = {
+    let  user= {
         typeOfEvent : "Birthday",
         dateOfEvent : "November 6, 2025",
         venueChosen : " Park73",
@@ -93,7 +94,7 @@ export default function Desktop(){
 
     return(
         <div>
-            <h1>Welcome {TyQuincia.firstName} to your Desktop!</h1>
+            <h1>Welcome {user.firstName} to your Desktop!</h1>
             <p>Keep track of all your event details here...</p>
             <div className="eventData">
                 {/* Passing current date in */}
@@ -104,18 +105,18 @@ export default function Desktop(){
                 <div className="row">
                     <div className="col">
                         <h3>Personal Information: </h3>
-                        <p>Your Name: {TyQuincia.firstName}</p>
-                        <p>Email: {TyQuincia.email}</p>
-                        <p>Phone: {TyQuincia.phone}</p>
+                        <p>Your Name: {user.firstName}</p>
+                        <p>Email: {user.email}</p>
+                        <p>Phone: {user.phone}</p>
                     </div>
                     <div className="col">
                         <h3>Event Information:</h3>
-                        <p>Event Type: {TyQuincia.typeOfEvent}</p>
-                        <p>Date of Event: {TyQuincia.dateOfEvent}</p>
+                        <p>Event Type: {user.typeOfEvent}</p>
+                        <p>Date of Event: {user.dateOfEvent}</p>
                         <p>Total Guests Invited: {allGuests.length} </p>
                         <p>Total Guests Will Attend: {goingGuests} </p>
                         <p>Total Guests Will Not Be Attending: {notGoingGuests} </p>
-                        <p>Venue Chosen: {TyQuincia.venueChosen}</p>
+                        <p>Venue Chosen: {user.venueChosen}</p>
                         <button onClick={totalGuests}>Get Stats</button>
                     </div>
                 </div>

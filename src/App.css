@@ -177,6 +177,20 @@ th {
   margin: 20px auto; /* horizontal center */
 
 }
+.credentials{
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  max-width: 400px;
+   display: flex;
+  flex-direction: column;
+  align-items: center; 
+  margin: 20px auto; /* horizontal center */
+  
+
+}
+
 
 .guest-form label {
   display: block;
@@ -184,9 +198,22 @@ th {
  
 }
 
+.credentials label {
+  display: block;
+  margin-bottom: 10px;
+  
+}
+
 
 .guest-form select {
   width: 100%;
+  padding: 5px;
+  margin-top: 3px;
+  border-radius: 4px;
+  border: 1px solid #aaa;
+}
+.credentials select {
+    width: 100%;
   padding: 5px;
   margin-top: 3px;
   border-radius: 4px;
@@ -203,8 +230,22 @@ th {
   cursor: default;
 }
 
+.credentials button {
+    margin-top: 10px;
+  padding: 8px 15px;
+  background-color: #869D96;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: default;
+}
+
 .guest-form button:hover {
   background-color: #45a049;
+}
+
+.credentials button:hover {
+   background-color: #45a049;
 }
 .analytics{
   padding: 8px 15px;
@@ -234,7 +275,8 @@ img{
   height: 80vh;
 }
 .carousel-inner{
-  padding: 100px;
+  padding-left: 200px;
+  padding-right: 200px;
   margin: 20px;
   height: 70vh;
 }
@@ -243,7 +285,5 @@ img{
  justify-content: center;
   
 }
-.credentials{
-  margin: 30px;
 
-}
+

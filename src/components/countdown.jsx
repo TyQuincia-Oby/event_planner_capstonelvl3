@@ -106,7 +106,7 @@ export default function CountdownTimer() {
             />
           </label>
 
-          <label>
+          <label htmlFor="date-picker">
             Event Date
             <input
               type="date"
