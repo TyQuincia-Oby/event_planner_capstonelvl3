@@ -28,23 +28,23 @@ export default function LoginPage ({loginComplete}){
         <div className="login">
             <h1>Event Planning SideKick</h1>
                 <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
-                <h3>App Features</h3>
+                <h2>App Features</h2>
                 <div className="carousel-inner">
                     <div className="carousel-item ">
-                        <p>Event guests can browse the busiest airports, ensuring proper arrival times for inbound guests</p>
-                        <img src="/airportscreen.png" className="d-block w-100" alt="airport"/>
+                        <h3>Event guests can browse the busiest airports, ensuring proper arrival times for inbound guests</h3>
+                        <img src="/airport.jpg" className="d-block w-100" alt="airport"/>
                     </div>
                     <div className="carousel-item">
-                        <p>Browse our amazing list of quality venues, even if you've chosen one</p>
-                        <img src="/venuescreen.png" className="d-block w-100" alt="venue"/>
+                        <h3>Browse our amazing list of quality venues, even if you've chosen one</h3>
+                        <img src="/venue.jpg" className="d-block w-100" alt="venue"/>
                     </div>
                     <div className="carousel-item">
-                        <p>Keep track of your event's details and even create a countdown until the BIG day</p>
-                        <img src="/desktopscreen.png" className="d-block w-100" alt="desktop"/>
+                        <h3>Keep track of your event's details and even create a countdown until the BIG day</h3>
+                        <img src="/organization.jpg" className="d-block w-100" alt="desktop"/>
                     </div>
                     <div className="carousel-item active">
-                        <p>Keep track of whom may be attending and add more guests to celebrate as you divulge your journey</p>
-                        <img src="/guestlistscreen.png" className="d-block w-100" alt="desktop"/>
+                        <h3>Keep track of whom may be attending and add more guests to celebrate as you divulge your journey</h3>
+                        <img src="/guest.jpg" className="d-block w-100" alt="desktop"/>
                     </div>
                 </div>
             <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
