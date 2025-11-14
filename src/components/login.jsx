@@ -85,7 +85,7 @@ export default function LoginPage ({loginComplete}){
                     </label>
                     <br />                      
                     <label>
-                        Password: <input type="password" name="password" form="control"required />
+                        Password: <input type="password" name="password" required />
                     </label>
                     <br />
                     <button type="submit">

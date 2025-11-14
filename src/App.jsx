@@ -8,6 +8,14 @@ function App() {
   // user is null when not logged in
   const [user, setUser] = useState(null);
 
+  useEffect(() => {
+  const savedUser = localStorage.getItem("user");
+  if (savedUser) {
+    setUser(JSON.parse(savedUser));
+  }
+}, []);
+
+
   // called when user successfully logs in
   function loginComplete(userData) {
     console.log("User logged in:", userData);
@@ -16,14 +24,7 @@ function App() {
      // save session so user stays logged in
     localStorage.setItem("user", JSON.stringify(userData));
 
-      // check for existing session on load
-  useEffect(() => {
-    const storedUser = localStorage.getItem("user");
-    if (storedUser) {
-      setUser(JSON.parse(storedUser));
-    }
-  }, []);
-
+    
   }
 
 
