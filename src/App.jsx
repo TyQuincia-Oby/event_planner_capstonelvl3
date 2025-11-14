@@ -8,12 +8,12 @@ function App() {
   // user is null when not logged in
   const [user, setUser] = useState(null);
 
-  useEffect(() => {
-  const savedUser = localStorage.getItem("user");
-  if (savedUser) {
-    setUser(JSON.parse(savedUser));
-  }
-}, []);
+//   useEffect(() => {
+//   const savedUser = localStorage.getItem("user");
+//   if (savedUser) {
+//     setUser(JSON.parse(savedUser));
+//   }
+// }, []);
 
 
   // called when user successfully logs in
