@@ -55,15 +55,15 @@ export default function Airports(){
                             </tr>
                         </thead>
                         <tbody>
-                            {airports.map((airport)=>(
-                                <tr key={airport.id}>
-                                    <td>{airport.rank}</td>
-                                    <td>{airport.airport_code}</td>
-                                    <td>{airport.airport}</td>
-                                    <td>{airport.total_passengers}</td>
-                                    <td>{airport.location}</td>
-                                    <td>{airport.country}</td>
-                                    <td>{airport.id}</td>
+                            {airports.map(({id,rank,airport_code,airport,total_passengers,location,country})=>(
+                                <tr key={id}>
+                                    <td>{rank}</td>
+                                    <td>{airport_code}</td>
+                                    <td>{airport}</td>
+                                    <td>{total_passengers}</td>
+                                    <td>{location}</td>
+                                    <td>{country}</td>
+                                    <td>{id}</td>
                                 </tr>
                             ))}
                         </tbody>
