@@ -4,6 +4,7 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
 import CountdownTimer from "../components/countdown";
 import LoginPage from "../components/login"
+import addDecoration from "../utils/greeting";
 
 
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -94,7 +95,7 @@ export default function Desktop(){
 
     return(
         <div>
-            <h1>Welcome {user.firstName} to your Desktop!</h1>
+            <h1>Welcome {addDecoration(user.firstName)} to your Desktop!</h1>
             <p>Keep track of all your event details here...</p>
             <div className="eventData">
                 {/* Passing current date in */}
