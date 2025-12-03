@@ -106,7 +106,7 @@ export default function Desktop(){
                 <div className="row">
                     <div className="col">
                         <h3>Personal Information: </h3>
-                        <p>Your Name: {user.firstName}</p>
+                        <p>Your Name: {addDecoration(user.firstName)}</p>
                         <p>Email: {user.email}</p>
                         <p>Phone: {user.phone}</p>
                     </div>
